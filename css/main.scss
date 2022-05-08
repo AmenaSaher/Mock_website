@@ -1,0 +1,276 @@
+body{
+    margin: 1.5em;
+}
+// html{
+//     scroll-behavior: smooth;
+// }
+
+a{
+    text-decoration: none;
+    font-size: 32px;
+    font-family: 'Mr Dafoe',sans-serif;
+
+    span{
+        color: rgb(224, 74, 74);
+    }
+}
+
+
+.hero-img{
+    position: absolute;
+    background: url('/images/cookies1.jpg');
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-position-x: 20% ;
+    background-position-y: 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: introLoad 2s forwards;
+}
+
+.logo{
+    color: white;
+}
+
+nav{
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100vh;
+    width: 50%;
+    z-index: 999;
+    // text-transform: lowercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
+    }
+    a{
+        color: black;
+        padding: .75em 2em;
+        display: block;
+        font-size: 27px;
+        
+        
+        &:hover{
+            background: rgb(226, 223, 223);
+        }
+    }
+    .close{
+        position: absolute;
+        float: right;
+        top: 0;
+        right:0;
+        margin:1.5em;
+    }
+}
+header {
+    display: flex;
+    justify-content: space-between;
+
+    img{
+        width: 3em;
+        height: 3em;
+        margin-top: -0.6em;
+        cursor: pointer;
+    }
+}
+
+h1{
+    font-family: 'Mr Dafoe', sans-serif;
+    font-size: 40px;
+    margin-top: 2em;
+    line-height: 3.3rem;
+    letter-spacing: 3px;
+}
+.subhead{
+    font-family: 'Poppins';
+    font-size: 16px;
+}
+section.hero{
+
+    color: white;
+    height: 90vh;
+    
+    .downarrow{
+        position: absolute;
+        bottom: 2em;
+        width: 2em;
+        animation: moveArrow 1.5s alternate-reverse infinite;
+    }
+}
+
+.more-info{
+    img{
+        width: 100%;
+        object-fit: cover;
+        height: 20em;
+    }
+
+    .title{
+        font-family: 'Mr Dafoe', sans-serif;
+        font-size:40px;
+    }
+    .desc{
+        font-family: 'Poppins';
+        font-size: 15px;
+    }
+}
+.footer1{
+    margin-top: 3em;
+}
+.footer{
+    background: rgb(192,145,103);
+    background: linear-gradient(90deg, rgba(192,145,103,1) 47%, rgba(189,140,97,1) 80%);
+    padding: 20px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+    h3{
+        font-family: 'Poppins';
+    }
+    .img1{
+        cursor: pointer;
+        margin-top: 19px ;
+        height: 20px;
+        width: 20px;
+    }
+    .img2{
+        cursor: pointer;
+        margin-top: 19px ;
+        height: 20px;
+        width: 20px;
+    }
+}
+.open-nav{
+    transform: translateX(0);
+}
+@media only screen and (min-width: 730px) {
+        .menu{
+            display: none;
+        }
+        nav {
+            // transition: none;
+            transform: translateX(0);
+            position: unset;
+            display: block;
+            width: auto;
+            height: auto;
+            background: none;
+
+            .close{
+                display: none;
+            }
+
+            ul{
+                display: flex;
+                margin: 0;
+
+                a{
+                    color: white;
+                    padding: .5em 1.5em;
+                    font-size: 20px;
+
+                    &:hover{
+                        background: none;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .hero-img {
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 40em;
+        }  
+        section.hero{
+        color: black;
+        width: 40%;
+        // margin-bottom: 20em;
+        // margin-left: 5em;
+        // margin-top: 10em;
+        margin: 10em 4em 0em 2em;
+        }
+        .subhead{
+        margin-right: 1.5em;
+        }
+        .logo {
+        color: black;
+        }
+
+        .feature {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 3em;
+            margin-bottom: 8em;
+            
+            
+            // img{
+            //     width:25em;
+            // }
+            .content{
+                text-align: right;
+                width: 25em;
+            }
+
+        }
+
+        .feature.left{
+            grid-template-areas: 
+            "left right";
+            
+            img{
+                grid-area: left;
+            }
+
+            .content{
+                text-align: right;
+                width: 25em;
+                justify-self: right;
+                
+                // .desc{
+                //     text-align: left;
+                //     justify-self: left;
+                // }
+                
+            }
+        }
+    }
+
+@media only screen and (min-width: 1260px){
+    .feature{
+        margin-right: 8em;
+            margin-left: 8em;
+    }
+}
+@keyframes introLoad{
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);;
+    }
+}
+
+@keyframes moveArrow{
+    from {
+        transform: translateY(-30px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+
+
+
