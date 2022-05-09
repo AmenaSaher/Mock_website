@@ -227,7 +227,8 @@ section.hero .downarrow {
   .feature {
     display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    
+        grid-template-columns: repeat(2, auto);
     gap: 3em;
     margin-bottom: 8em;
   }
