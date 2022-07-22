@@ -1,2 +1,2 @@
-# Mock_website
-A small mock website
+Deployment: 
+https://sugarrush.netlify.app
